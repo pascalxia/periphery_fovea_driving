@@ -1,0 +1,9 @@
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
+data/*
+!data/.gitkeep
+logs/*
+!logs/pre-trained_model/.gitkeep
+bvlc_alexnet.npy
