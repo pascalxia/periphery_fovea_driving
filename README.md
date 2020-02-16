@@ -1,4 +1,4 @@
-# periphery_fovea_driving
+# Periphery-Fovea Multi-Resolution Driving Model Guided by Human Attention
 
 ## Project Introduction:
 
@@ -9,7 +9,7 @@ This project accompanies the paper **_Periphery-Fovea Multi-Resolution Driving M
 
 ### Video demos 
 <a href="http://www.youtube.com/watch?feature=player_embedded&v=VWa4qm5o17E" target="_blank">
-     <img src="http://img.youtube.com/vi/VWa4qm5o17E/15.jpg" alt="Video demo cover" width="560" height="315" border="10" />
+     <img src="http://img.youtube.com/vi/VWa4qm5o17E/0.jpg" alt="Video demo cover" width="560" height="315" border="10" />
 </a>
 
 ### Model structure
@@ -52,14 +52,14 @@ python3 train.py \
 --n_future_steps=10
 ```
 
-5. Track the training in Tensorboard.
+5. To track the training in Tensorboard, run the following command.
 ```bash
 tensorboard --logdir=logs/a_name_for_this_experiment
 ```
 
 
 ### Evaluate our pre-trained model or your trained models
-1. The original videos of BDD-V dataset are about one-minute long. Your machine may not be able to fit one whole video in. Run the following command to divide the testing videos into segments of a length of your choice. Note that the unit of `--max_length` is the number of frames. In this example command, `--max_length` is set to 310, because the frame rate is 10Hz, the model predicts for one second in the future and we would like to test the model over 30-second-long sequences.
+1. The original videos of BDD-V dataset are about one-minute long. Your machine may not be able to fit one whole video in. Run the following command to divide the testing videos into segments of a length of your choice. Note that the unit of `--max_length` is the number of frames. In this example command, `--max_length` is set to 310. This is because the frame rate is 10Hz, the model predicts for one second in the future and we would like to test the model over 30-second-long sequences.
 ```bash
 python3 divide_tfrecords.py \
 --data_dir=data \
